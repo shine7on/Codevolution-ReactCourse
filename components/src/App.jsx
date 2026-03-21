@@ -9,6 +9,8 @@ import { Greeting } from './Greeting';
 import { CardWrapper } from './CardWrapper';
 import { UserDetails } from './UserDetails';
 import { ProductList } from './ProductList';
+import { NameList } from './NameList';
+import { Alert } from './Alert';
 
 
 // parenent components
@@ -16,6 +18,8 @@ function App() {
   return (
     <div>
       <h1>Codevolution React Course</h1>
+      <Alert>Your change has been saved.</Alert>
+      <Alert type='error'>Something went wrong.</Alert>
       <UserDetails name='Bruce Wayne' isOnline={true}/>
       <Welcome name='Max'/>
       <Welcome name='Julia'/>
@@ -41,10 +45,14 @@ function App() {
       <Button />
       <br />
       <ContactForm />
+      <br />
       <StyleForm />
+      <br />
       <CandidateProfile />
-
+      <br />
       <ProductList />
+      <br />
+      <NameList />
     </div>
   );
 }
