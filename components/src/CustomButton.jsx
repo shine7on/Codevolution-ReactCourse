@@ -1,3 +1,8 @@
 export const CustomButton = () => {
-    return <button>Like</button>
+
+    const handleClick = () => {
+        alert('Thanks for liking')
+    };
+
+    return <button onClick={handleClick}>Like</button>
 };
