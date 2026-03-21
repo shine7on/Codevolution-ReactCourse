@@ -1,4 +1,4 @@
-import './Alert.css';
+import styles from './Alert.module.css';
 
 /* INLINE STYLE
 export const Alert = ({children, type='success'}) => {
@@ -13,5 +13,5 @@ export const Alert = ({children, type='success'}) => {
 */
 
 export const Alert = ({children, type='success'}) => {
-    return <div className={`alert ${type}`}>{ children }</div>
+    return <div className={`${styles.alert} ${styles[type]}`}>{ children }</div>
 };
