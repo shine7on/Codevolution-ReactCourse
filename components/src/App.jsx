@@ -5,6 +5,7 @@ import { ContactForm } from './ContactForm';
 import { StyleForm } from './StyleForm';
 import { CandidateProfile } from './CandidateProfile';
 import { Product } from './Product';
+import { Greeting } from './Greeting';
 
 // child components
 
@@ -16,6 +17,11 @@ function App() {
       <Welcome name='Max'/>
       <Welcome name='Julia'/>
       <Welcome name='Chris'/>
+
+      <Greeting />
+      <Greeting name='Alex'/>
+      <Greeting message='Yey'/>
+      <Greeting name='Eric' message='Yoo'/>
 
       <Product 
         title='Apple' 
