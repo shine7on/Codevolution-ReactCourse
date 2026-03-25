@@ -12,6 +12,9 @@ import { ProductList } from './ProductList';
 import { NameList } from './NameList';
 import { Alert } from './Alert';
 import { CustomButton } from './CustomButton';
+import { Newsletter } from './Newsletter';
+import { Contact } from './Contact';
+import { Menu } from './Menu';
 
 
 // parenent components
@@ -21,6 +24,10 @@ function App() {
       <h1>Codevolution React Course</h1>
       <Alert>Your change has been saved.</Alert>
       <Alert type='error'>Something went wrong.</Alert>
+      <br></br>
+      <Menu />
+      <Newsletter />
+      <Contact />
       <CustomButton />
       <UserDetails name='Bruce Wayne' isOnline={true}/>
       <Welcome name='Max'/>
