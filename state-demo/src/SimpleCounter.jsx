@@ -9,6 +9,10 @@ export const SimpleCounter = () => {
         console.log(`Before setCount: count is `, count);
         setCount(count+1);
         console.log(`Still Trigger Phase: After setCount: count is `, count);
+        setCount(count+5);
+        console.log(`Still Trigger Phase: After setCount: count is `, count);
+        setCount(count+10);
+        console.log(`Still Trigger Phase: After setCount: count is `, count);
     }
 
     return (
