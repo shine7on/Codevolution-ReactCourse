@@ -1,34 +1,72 @@
 import { useState } from "react";
 
 export const ShoppingCart = () => {
+
+    const [cartItems, setCartItems] = useState({
+        reactCourse: 0,
+        vueCourse: 0,
+    });
+
+    const prices = {
+        reactCourse: 49.99,
+        vueCourse: 39.99,
+    };
+
+    const handleAddReactCouse = () => {
+        setCartItems({
+            ...cartItems,
+            reactCourse: cartItems.reactCourse+1
+        });
+    };
+
+    const handleAddVueCourse = () => {
+        setCartItems({
+            ...cartItems,
+            vueCourse: cartItems.vueCourse + 1
+        });
+    };
+
     return (
         <div>
-            <ProductCard />
-            <CartSummary />
+            <h2>Shopping Cart</h2>
+            <ProductCard 
+                name = 'React Course'
+                price = {prices.reactCourse}
+                quantity = {cartItems.reactCourse}
+                onAddToCart={handleAddReactCouse}
+                />
+            <ProductCard 
+                name = 'Vue Course'
+                price = {prices.vueCourse}
+                quantity = {cartItems.vueCourse}
+                onAddToCart={handleAddVueCourse}
+                />
+            <CartSummary cartItems={cartItems} prices={prices}/>
         </div>
     );
 };
 
-export const ProductCard = () => {
-    const [quantity, setQuantity] = useState(0)
-
+export const ProductCard = ({name,price,quantity,onAddToCart}) => {
     return (
         <div>
-            <h3>React Course</h3>
-            <p>&49.99</p>
+            <h3>{name}</h3>
+            <p>${price}</p>
             <p>Quantity: {quantity}</p>
-            <button onClick={() => setQuantity(quantity+1)}>Add to cart</button>
+            <button onClick={onAddToCart}>Add to cart</button>
         </div>
     );
 };
 
+export const CartSummary = ({cartItems, prices}) => {
 
-export const CartSummary = () => {
+    const totalItems = cartItems.reactCourse + cartItems.vueCourse
+    const totalPrice = cartItems.reactCourse * prices.reactCourse + cartItems.vueCourse * prices.vueCourse
+
     return (
         <div>
             <h3>Cart Summary</h3>
-            <p>Total items: 0</p>
-            <p>Total prices: 0</p>
+            <p>Total items: {totalItems}</p>
+            <p>Total prices: ${totalPrice}</p>
         </div>
     );
 }
